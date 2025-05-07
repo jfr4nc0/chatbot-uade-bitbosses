@@ -1,4 +1,4 @@
-from src.assistant.utils.FilesUtils import FilesUtils
+from src.utils.FilesUtils import FilesUtils
 
 def main():
     file_name = 'formula_1_dataset.csv'

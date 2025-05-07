@@ -1,7 +1,7 @@
 import unittest
 import os
 from unittest.mock import patch
-from src.assistant.assistant import main
+from src.assistant_simple.assistant import main
 
 class TestChatbotIntegration(unittest.TestCase):
 

@@ -71,3 +71,4 @@ dmypy.json
 .pre-commit-config.yaml
 
 .commit.sh
+/src/resources/f1_dataset/

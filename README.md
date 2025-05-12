@@ -33,7 +33,7 @@ This project is a chatbot application designed to answer questions based on a da
 
 ## Running the Program
 
-1. Ensure the dataset file `formula_1_dataset.csv` is located in the `src/resources` directory.
+1. Ensure the dataset file `preguntas_y_respuestas.csv` is located in the `src/resources` directory.
 
 2. Run the chatbot:
    ```bash
@@ -42,6 +42,7 @@ This project is a chatbot application designed to answer questions based on a da
 
 3. Interact with the chatbot by typing your questions. To exit, type `exit`.
 
+<!--
 ## Running Tests
 
 To ensure the program works as expected, you can run the integration tests:
@@ -50,13 +51,15 @@ To ensure the program works as expected, you can run the integration tests:
    ```bash
    python -m unittest discover tests
    ```
+-->
 
 ## Project Structure
 
 - `main.py`: Entry point of the application.
 - `src/`: Contains the chatbot logic and resources.
+<!--
 - `tests/`: Contains integration tests for the chatbot.
-
+-->
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.

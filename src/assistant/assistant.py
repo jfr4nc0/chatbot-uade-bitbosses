@@ -95,14 +95,14 @@ def save_question(file_path, question, answer):
     except Exception as e:
         print(f"Error guardando pregunta: {e}")
 
-def find_by_key_words(pregunta_usuario, file_path):
+def find_by_key_words(user_input, file_path):
     """
     Reads the CSV file and finds the question whose filtered keywords
     best match the filtered keywords of the user's input. Matching is based
     on the number of shared whole words (keywords).
 
     Args:
-        pregunta_usuario (str): The user's input question string.
+        user_input (str): The user's input question string.
         file_path (str): The absolute path to the CSV file containing questions.
 
     Returns:
@@ -114,12 +114,12 @@ def find_by_key_words(pregunta_usuario, file_path):
          print("Error: No se pudo buscar la pregunta. Ruta de archivo no válida.")
          return None, None
 
-    palabras_clave_usuario = set(filter_key_words(pregunta_usuario))
-    max_coincidencias = 0
-    mejor_pregunta = None
-    mejor_respuesta = None
+    key_words = set(filter_key_words(user_input))
+    max_coincidences = 0
+    best_question = None
+    best_answer = None
 
-    if not palabras_clave_usuario:
+    if not key_words:
         return None, None
 
     try:
@@ -132,17 +132,17 @@ def find_by_key_words(pregunta_usuario, file_path):
 
             for row in reader:
                 if 'Pregunta' in row and 'Respuesta' in row:
-                    pregunta_csv_text = row['Pregunta']
-                    respuesta_csv_text = row['Respuesta']
+                    question_csv_text = row['Pregunta']
+                    answer_csv_text = row['Respuesta']
 
-                    palabras_clave_csv = set(filter_key_words(pregunta_csv_text))
+                    key_words_csv = set(filter_key_words(question_csv_text))
 
-                    coincidencias = len(palabras_clave_usuario.intersection(palabras_clave_csv))
+                    coincidences = len(key_words.intersection(key_words_csv))
 
-                    if coincidencias > max_coincidencias:
-                        max_coincidencias = coincidencias
-                        mejor_pregunta = pregunta_csv_text
-                        mejor_respuesta = respuesta_csv_text
+                    if coincidences > max_coincidences:
+                        max_coincidences = coincidences
+                        best_question = question_csv_text
+                        best_answer = answer_csv_text
 
 
     except FileNotFoundError:
@@ -152,8 +152,8 @@ def find_by_key_words(pregunta_usuario, file_path):
          print(f"Error al leer el archivo CSV '{file_path}' durante la búsqueda: {e}")
          return None, None
 
-    if mejor_pregunta and max_coincidencias > 0:
-        return mejor_pregunta, mejor_respuesta
+    if best_question and max_coincidences > 0:
+        return best_question, best_answer
     else:
         return None, None
 
@@ -201,11 +201,11 @@ def run_assistant():
             save_question(file_path, question, answer)
             continue
 
-        pregunta, respuesta = find_by_key_words(user_input, file_path)
+        question, answer = find_by_key_words(user_input, file_path)
 
-        if pregunta:
-            print(f"Chatbot: Pregunta encontrada: {pregunta}")
-            print(f"Chatbot: Respuesta: {respuesta}")
+        if question:
+            print(f"Chatbot: Pregunta encontrada: {question}")
+            print(f"Chatbot: Respuesta: {answer}")
         else:
             print("Chatbot: No tengo la suficiente información para responder a esa pregunta.")
 

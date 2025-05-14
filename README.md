@@ -1,66 +1,25 @@
 # chatbot-uade-bitbosses
 
-## Description
+Este es el README para el proyecto chatbot-uade-bitbosses.
 
-This project is a chatbot application designed to answer questions based on a dataset. It uses a CSV file as its knowledge base and provides responses to user queries.
+## Descripción
 
-## Requirements
+Este proyecto es una aplicación de chatbot sencilla, especializada en Fórmula 1. Está diseñada para responder preguntas leyendo directamente de un archivo CSV local que actúa como su base de conocimiento. Permite a los usuarios hacer preguntas sobre F1 y también agregar nuevas preguntas y respuestas al archivo de datos.
 
-- Python 3.8 or higher
-- `pip` (Python package manager)
+## Requisitos
 
-## Installation
+- Python 3.8 o superior
 
-1. Clone the repository:
+Este script utiliza únicamente la biblioteca estándar de Python, por lo que no se requieren dependencias adicionales para su funcionamiento básico.
+
+## Instalación
+
+1. Clona el repositorio:
    ```bash
-   git clone https://github.com/your-username/chatbot-uade-bitbosses.git
+   git clone [https://github.com/your-username/chatbot-uade-bitbosses.git](https://github.com/your-username/chatbot-uade-bitbosses.git)
    cd chatbot-uade-bitbosses
-   ```
-
-2. Create a virtual environment (optional but recommended):
+    ```
+2. Ejecute el asistente:
    ```bash
-   python3 -m venv venv
-   source venv/bin/activate  # On macOS/Linux
-   venv\Scripts\activate     # On Windows
+   python chatbot.py
    ```
-
-<!--
-3. Install the required dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
--->
-
-## Running the Program
-
-1. Ensure the dataset file `preguntas_y_respuestas.csv` is located in the `src/resources` directory.
-
-2. Run the chatbot:
-   ```bash
-   python main.py
-   ```
-
-3. Interact with the chatbot by typing your questions. To exit, type `exit`.
-
-<!--
-## Running Tests
-
-To ensure the program works as expected, you can run the integration tests:
-
-1. Run the tests using `unittest`:
-   ```bash
-   python -m unittest discover tests
-   ```
--->
-
-## Project Structure
-
-- `main.py`: Entry point of the application.
-- `src/`: Contains the chatbot logic and resources.
-<!--
-- `tests/`: Contains integration tests for the chatbot.
--->
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
-```
